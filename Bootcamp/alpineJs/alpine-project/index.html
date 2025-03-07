@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Hub</title>
+    
+    <script type="module">
+        import Alpine from 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js';
+        window.Alpine = Alpine;
+        Alpine.start();
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background: #111; color: #0f0; padding: 20px; }
+        .card { background: #222; padding: 20px; border-radius: 10px; margin: 10px; display: inline-block; }
+        button { background: #0f0; color: #111; padding: 10px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Cybersecurity Hub</h1>
+    <div x-data="{ tips: ['Use strong passwords', 'Enable 2FA', 'Beware of phishing emails', 'Keep software updated'], 
+                    tip: 'Click to get a tip!' }">
+        <p x-text="tip"></p>
+        <button @click="tip = tips[Math.floor(Math.random() * tips.length)]">Get a Security Tip</button>
+    </div>
+    
+    <h2>Cybersecurity Tools</h2>
+    <div x-data="{ tools: ['Wireshark', 'Metasploit', 'Nmap', 'Burp Suite'] }">
+        <template x-for="tool in tools">
+            <div class="card">
+                <p x-text="tool"></p>
+            </div>
+        </template>
+    </div>
+</body>
+</html>
