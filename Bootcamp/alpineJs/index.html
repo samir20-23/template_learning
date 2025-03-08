@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="./main.js" defer></script>
+</head>
+<body>
+    <div x-data="{ count: 0 }">
+        <button x-on:click="count++">Click me</button>
+        <p>You clicked: <span x-text="count"></span> times</p>
+    </div>
+</body>
+</html>
