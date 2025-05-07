@@ -1,3 +1,4 @@
+
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=1900&pause=10&color=cc874c&center=true&vCenter=true&multiline=true&repeat=false&random=true&width=482&height=89&lines=Learning" alt="Typing SVG" />
 
 </h1> 
@@ -64,3 +65,4 @@ This repository is open-source and available under the [MIT License](LICENSE).
 ```
 
 This `README.md` focuses on the fact that you're pushing your learning projects in different technologies without mentioning the specific languages or frameworks. You can modify it to match your preferences and structure!
+test test test test 
