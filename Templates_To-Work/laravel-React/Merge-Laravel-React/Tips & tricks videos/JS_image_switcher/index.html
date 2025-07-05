@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Image Switcher</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Slides -->
+        <div class="slides">
+            <div class="shown" style="background-image: url('https://cdn.pixabay.com/photo/2015/04/19/08/33/flower-729512_1280.jpg');"></div>
+            <div style="background-image: url('https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_1280.jpg');"></div>
+            <div style="background-image: url('https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_1280.jpg');"></div>
+            <div style="background-image: url('https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492_1280.jpg');"></div>
+            <div style="background-image: url('https://cdn.pixabay.com/photo/2014/09/14/18/04/dandelion-445228_1280.jpg');"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btns">
+            <button id="prev"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z"/></svg></button>
+            <button id="next"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg></button>
+        </div>
+
+        <!-- Dots -->
+        <ul class="dots">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

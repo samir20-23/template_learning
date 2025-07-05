@@ -1,0 +1,16 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+// At the top (or wherever you manage global imports): 
+
+$fa-font-path: "../webfonts"; // Vite builds into public/build/assets, so go up
+
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid"; // or brands/regular if needed
+
+@import "@fortawesome/fontawesome-free/css/all.css";
