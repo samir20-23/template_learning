@@ -1,0 +1,38 @@
+---
+AllCops:
+  CacheRootDirectory: tmp
+  DisplayStyleGuide: true
+  Exclude:
+    - Vagrantfile
+    - config/initializers/json_ld*
+    - lib/mastodon/migration_helpers.rb
+  ExtraDetails: true
+  NewCops: enable
+  TargetRubyVersion: 3.2 # Oldest supported ruby version
+
+inherit_from:
+  - .rubocop/layout.yml
+  - .rubocop/metrics.yml
+  - .rubocop/naming.yml
+  - .rubocop/rails.yml
+  - .rubocop/rspec_rails.yml
+  - .rubocop/rspec.yml
+  - .rubocop/style.yml
+  - .rubocop/i18n.yml
+  - .rubocop/custom.yml
+  - .rubocop_todo.yml
+  - .rubocop/strict.yml
+
+inherit_mode:
+  merge:
+    - Exclude
+
+plugins:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-performance
+  - rubocop-i18n
+
+require:
+  - rubocop-rspec_rails
+  - rubocop-capybara

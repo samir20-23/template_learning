@@ -1,0 +1,16 @@
+{
+  "name": "apollographql",
+  "version": "1.0.0",
+  "description": "Apollo GraphQL is a platform for building and managing GraphQL APIs. It provides tools for server-side and client-side integration with GraphQL, enabling developers to fetch, manage, and manipulate data easily. Apollo simplifies the process of implementing GraphQL APIs and integrates seamlessly with various technologies and frameworks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.10.0"
+  }
+}
