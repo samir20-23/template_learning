@@ -1,14 +1,9 @@
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=1900&pause=10&color=cc874c&center=true&vCenter=true&multiline=true&repeat=false&random=true&width=482&height=89&lines=Learning" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&duration=1900&pause=10&color=#7d4039&center=true&vCenter=true&multiline=true&repeat=false&random=true&width=482&height=89&lines=Learning" alt="Typing SVG" />
 
 </h1> 
 </div>
-
-<div id="header" align="center">
-  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHA3MHNtMGw2cnV3dnNjYzJ1c2JhazFnajQ5dHg2aXo4dW4ybXRxOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zbzJF5kZxHBw8f7aOD/giphy.gif" width="280"/>
-       </a> 
-       </a>
-</div>
+ 
 ```markdown
 # Learning Projects Repository
 
