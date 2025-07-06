@@ -1,30 +1,35 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import Users from "../pages/Users";
-import NotFound from "../pages/Notfound";
 import Layout from "../layouts/Layout";
+import Home from "../pages/Home"; 
+import NotFound from "../pages/Notfound";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import Skills from "../pages/Skills";
+import Project from "../pages/Project";
 
 export const router = createBrowserRouter([
   {
     element: <Layout />,
-    children: [ 
+    children: [
       {
         path: "/",
         element: <Home />,
+      }, 
+      {
+        path: "/about",
+        element: <About />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: "/Skills",
+        element: <Skills />,
       },
       {
-        path: "/register",
-        element: <Register />,
+        path: "/Project",
+        element: <Project />,
       },
       {
-        path: "/users",
-        element: <Users />,
+        path: "/Contact",
+        element: <Contact />,
       },
       {
         path: "*",
