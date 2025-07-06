@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import "../App.css";
+import '../App.css';
 function Layout() {
   return (
     <>
@@ -10,20 +10,23 @@ function Layout() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/register">register</Link>
+              <Link to="/Skills">Skills</Link>
             </li>
             <li>
-              <Link to="/users">users</Link>
+              <Link to="/Project">Project</Link>
             </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li> 
           </ul>
         </nav>
       </header>
 
       <main>
-        <Outlet /> {/* This is where the child routes will be rendered */}
+        <Outlet />  
       </main>
 
       <footer>
