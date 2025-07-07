@@ -1,0 +1,7 @@
+// src/lib/api.js
+import axios from "axios";
+
+export default axios.create({
+  baseURL: import.meta.env.VITE_BACKEND_URL,  // ← note the /api prefix
+  withCredentials: true,
+});
