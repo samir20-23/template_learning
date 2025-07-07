@@ -1,11 +1,17 @@
 import { Outlet, Link } from "react-router-dom";
-import '../App.css';
+import "../App.css";
+import imgUrl from "../assets/img/logo.png";
 function Layout() {
   return (
     <>
       <header>
         <nav>
           <ul>
+            <div className="logo">
+              <Link to="/">
+                <img src={imgUrl} alt="Logo" className="h-12 w-auto" />
+              </Link>
+            </div>
             <li>
               <Link to="/">Home</Link>
             </li>
@@ -20,13 +26,19 @@ function Layout() {
             </li>
             <li>
               <Link to="/contact">Contact</Link>
-            </li> 
+            </li>
+            <li>
+              <Link to="/Login">Login</Link>
+            </li>
+            <li>
+              <Link to="/Register">Register</Link>
+            </li>
           </ul>
         </nav>
       </header>
 
-      <main>
-        <Outlet />  
+      <main className="main">
+        <Outlet />
       </main>
 
       <footer>
