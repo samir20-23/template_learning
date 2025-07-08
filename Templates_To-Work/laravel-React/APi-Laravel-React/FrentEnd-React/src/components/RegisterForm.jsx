@@ -1,130 +1,119 @@
-import { useState } from "react"; 
-import api from "../lib/api";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import axiosClient from "../lib/api";
+
+const registerSchema = z
+  .object({
+    name: z.string().min(1, "Name is required"),
+    email: z.string().min(1, "Email is required").email("Invalid email"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    password_confirmation: z.string().min(1, "Please confirm password"),
+  })
+  .refine((data) => data.password === data.password_confirmation, {
+    path: ["password_confirmation"],
+    message: "Passwords do not match",
+  });
 
 export default function RegisterForm({ onSuccess, onError }) {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-    password_confirmation: ""
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm({
+    resolver: zodResolver(registerSchema),
   });
-  const [errors, setErrors] = useState({});
-  const [loading, setLoading] = useState(false);
 
-  const validate = () => {
-    const errs = {};
-    if (!form.name) errs.name = "Name is required";
-    if (!form.email) errs.email = "Email is required";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email))
-      errs.email = "Invalid email";
-    if (!form.password) errs.password = "Password is required";
-    else if (form.password.length < 6)
-      errs.password = "Password must be at least 6 characters";
-    if (form.password !== form.password_confirmation)
-      errs.password_confirmation = "Passwords do not match";
-    return errs;
-  };
-
-  const handleChange = (e) => {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const errs = validate();
-    setErrors(errs);
-    if (Object.keys(errs).length) return;
-
-    console.log("⏳ Registering with:", form);
-    setLoading(true);
-
+  const onSubmit = async (data) => {
+    console.log("⏳ Registering with:", axiosClient.defaults, data);
     try {
-      await api.get("/sanctum/csrf-cookie");
-      const res = await api.post("/register", form);
-      console.log("✅ Register success response:", res.data);
+      await axiosClient.get("/sanctum/csrf-cookie");
+      const res = await axiosClient.post("/register", data);
+      console.log("✅ Register success:", res.data);
       onSuccess(res.data);
     } catch (err) {
-      console.log(
-        "❌ Register error response:",
-        err.response?.data || err.message
-      );
+      console.log("❌ Register error:", err.response?.data || err.message);
       onError(err.response?.data?.message || "Registration failed");
-    } finally {
-      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="max-w-md mx-auto space-y-4"
+    >
       <div>
-        <label htmlFor="name" className="block font-medium">Name</label>
+        <label htmlFor="name" className="block font-medium">
+          Name
+        </label>
         <input
           id="name"
-          name="name"
           type="text"
-          value={form.name}
-          onChange={handleChange}
+          {...register("name")}
           className="w-full border rounded px-3 py-2"
+          value="samir"
         />
-        {errors.name && <p className="text-red-600 text-sm">{errors.name}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="email" className="block font-medium">Email</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full border rounded px-3 py-2"
-        />
-        {errors.email && <p className="text-red-600 text-sm">{errors.email}</p>}
-      </div>
-
-      <div>
-        <label htmlFor="password" className="block font-medium">Password</label>
-        <input
-          id="password"
-          name="password"
-          type="password"
-          value={form.password}
-          onChange={handleChange}
-          className="w-full border rounded px-3 py-2"
-        />
-        {errors.password && (
-          <p className="text-red-600 text-sm">{errors.password}</p>
+        {errors.name && (
+          <p className="text-red-600 text-sm">{errors.name.message}</p>
         )}
       </div>
 
       <div>
-        <label
-          htmlFor="password_confirmation"
-          className="block font-medium"
-        >
+        <label htmlFor="email" className="block font-medium">
+          Email
+        </label>
+        <input
+          id="email"
+          type="email"
+          {...register("email")}
+          className="w-full border rounded px-3 py-2"
+          value="aouladamarsamir@gmail.com"
+        />
+        {errors.email && (
+          <p className="text-red-600 text-sm">{errors.email.message}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="password" className="block font-medium">
+          Password
+        </label>
+        <input
+          id="password"
+          type="password"
+          {...register("password")}
+          className="w-full border rounded px-3 py-2"
+          value="password123"
+        />
+        {errors.password && (
+          <p className="text-red-600 text-sm">{errors.password.message}</p>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="password_confirmation" className="block font-medium">
           Confirm Password
         </label>
         <input
           id="password_confirmation"
-          name="password_confirmation"
           type="password"
-          value={form.password_confirmation}
-          onChange={handleChange}
+          {...register("password_confirmation")}
           className="w-full border rounded px-3 py-2"
+          value="password123"
         />
         {errors.password_confirmation && (
           <p className="text-red-600 text-sm">
-            {errors.password_confirmation}
+            {errors.password_confirmation.message}
           </p>
         )}
       </div>
 
       <button
         type="submit"
-        disabled={loading}
+        disabled={isSubmitting}
         className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 disabled:opacity-50"
       >
-        {loading ? "Registering…" : "Register"}
+        {isSubmitting ? "Registering…" : "Register"}
       </button>
     </form>
   );

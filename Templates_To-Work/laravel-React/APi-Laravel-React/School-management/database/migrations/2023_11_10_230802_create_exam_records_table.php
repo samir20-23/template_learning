@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Exam::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete();
-            $table->unsignedFloat('note');
+            $table->float('score')->unsigned();
             $table->text('comment');
             $table->softDeletes();
             $table->timestamps();
