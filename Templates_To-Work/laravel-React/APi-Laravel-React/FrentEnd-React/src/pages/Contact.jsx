@@ -1,50 +1,40 @@
-import { Button } from "@/components/ui/button.jsx";
+import { useEffect, useState } from "react";
+import axiosClient from "../lib/api";
 
 export default function Contact() {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    axiosClient.get("/api/contacts").then(res => setContacts(res.data));
+  }, []);
+
+  if (!contacts.length) return <p>Loading…</p>;
+
   return (
-    <div className="max-w-lg mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Contact</h1>
-      <p className="mb-6 text-gray-700">
-        If you have any questions, feel free to reach out!
-      </p>
-
-      <form className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block mb-1 font-medium">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="block mb-1 font-medium">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="message" className="block mb-1 font-medium">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            required
-            className="w-full border border-gray-300 rounded-md px-3 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-
-        <div className="flex justify-center mt-6">
-          <Button>Send</Button>
-        </div>
-      </form>
-    </div>
+    <section className="p-6 max-w-3xl mx-auto">
+      <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+      <ul className="space-y-3">
+        {contacts.map(c => (
+          <li key={c.id} className="flex items-center">
+            {c.icon && <img src={`/icons/${c.icon}.svg`} alt="" className="w-5 h-5 mr-2" />}
+            {c.type === 'Email' ? (
+              <a href={`mailto:${c.value}`} className="hover:underline">{c.value}</a>
+            ) : c.type === 'Phone' ? (
+              <a href={`tel:${c.value}`} className="hover:underline">{c.value}</a>
+            ) : (
+              <a
+                href={`https://${c.value}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                {c.value}
+              </a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
+  
