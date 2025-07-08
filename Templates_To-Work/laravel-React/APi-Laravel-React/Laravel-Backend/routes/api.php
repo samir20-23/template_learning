@@ -9,11 +9,12 @@ use App\Http\Controllers\Api\{
   SkillController,
   ProjectController,
   ContactController
-}; 
-Route::get('/about',    [AboutController::class,   'index']);
-Route::get('/skills',   [SkillController::class,   'index']);
-Route::get('/projects', [ProjectController::class, 'index']);
-Route::get('/contacts', [ContactController::class, 'index']);
+};
+
+Route::apiResource('about', AboutController::class);
+Route::apiResource('skills',   SkillController::class);
+Route::apiResource('projects', ProjectController::class);
+Route::apiResource('contacts', ContactController::class);
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // CSRF cookie (for Sanctum)
 Route::get('/sanctum/csrf-cookie', [\Laravel\Sanctum\Http\Controllers\CsrfCookieController::class, 'show']);
