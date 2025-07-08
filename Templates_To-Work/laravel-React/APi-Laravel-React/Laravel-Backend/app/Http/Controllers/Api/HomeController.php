@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\About;
+use App\Models\Home;
 use Illuminate\Http\JsonResponse;
 
-class AboutController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
    public function index(): JsonResponse
     {
-        return response()->json(About::all());
+        return response()->json(Home::all());
     }
 
     /**

@@ -8,9 +8,10 @@ use App\Http\Controllers\Api\{
   AboutController,
   SkillController,
   ProjectController,
-  ContactController
+  ContactController,
+  HomeController
 };
-
+Route::apiResource('home', HomeController::class);
 Route::apiResource('about', AboutController::class);
 Route::apiResource('skills',   SkillController::class);
 Route::apiResource('projects', ProjectController::class);

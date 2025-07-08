@@ -13,29 +13,41 @@ class ProjectSeeder extends Seeder
 
         $projects = [
             [
-                'title' => 'Portfolio Website',
-                'description' => 'A personal portfolio built with Laravel & React to showcase my work.',
-                'url' => 'https://samir-portfolio.example.com',
+                'title'       => 'Personal Portfolio',
+                'description' => 'A responsive personal website built to showcase my skills, blog posts, and contact info.',
+                'url'         => 'https://samir-portfolio.example.com',
+                'repo_url'    => 'https://github.com/samir/portfolio',
+                'image_path'  => 'projects/portfolio.png',
+                'tech_stack'  => 'Laravel,React,TailwindCSS,Vite',
             ],
             [
-                'title' => 'E-Commerce Platform',
-                'description' => 'Full-featured online store with shopping cart, payments, and admin panel.',
-                'url' => 'https://shop.example.com',
+                'title'       => 'E‑Commerce Store',
+                'description' => 'Full‑featured online store with product catalog, shopping cart, and Stripe payments integration.',
+                'url'         => 'https://shop.example.com',
+                'repo_url'    => 'https://github.com/samir/ecommerce-store',
+                'image_path'  => 'projects/ecommerce.png',
+                'tech_stack'  => 'Laravel,Inertia.js,Vue,MySQL,Stripe API',
             ],
             [
-                'title' => 'Blog CMS',
-                'description' => 'Headless CMS for blogging, with REST API and React front‑end.',
-                'url' => 'https://blog-api.example.com',
+                'title'       => 'Chat App',
+                'description' => 'Real‑time chat application using WebSockets, complete with user presence and private messaging.',
+                'url'         => null,
+                'repo_url'    => 'https://github.com/samir/chat-app',
+                'image_path'  => 'projects/chat-app.png',
+                'tech_stack'  => 'Laravel Echo,Socket.io,React,Redis',
             ],
             [
-                'title' => 'Chat Application',
-                'description' => 'Real‑time chat using WebSockets and Laravel Echo.',
-                'url' => null,
+                'title'       => 'Headless Blog CMS',
+                'description' => 'API‑driven blogging platform; headless CMS with React front‑end consuming a Laravel API.',
+                'url'         => 'https://blog.example.com',
+                'repo_url'    => 'https://github.com/samir/headless-blog',
+                'image_path'  => 'projects/headless-blog.png',
+                'tech_stack'  => 'Laravel Sanctum,React,Axios,Markdown',
             ],
         ];
 
-        foreach ($projects as $p) {
-            Project::create($p);
+        foreach ($projects as $data) {
+            Project::create($data);
         }
     }
 }

@@ -11,7 +11,10 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('url')->nullable();
+            $table->string('url')->nullable();        // live/demo URL
+            $table->string('repo_url')->nullable();   // source code repo
+            $table->string('image_path')->nullable(); // e.g. 'projects/portfolio.png'
+            $table->string('tech_stack')->nullable(); // comma-separated
             $table->timestamps();
         });
     }
