@@ -12,7 +12,7 @@ class ProjectController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): JsonResponse
+   public function index(): JsonResponse
     {
         return response()->json(Project::all());
     }
