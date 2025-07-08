@@ -8,7 +8,7 @@ export default function RegisterPage() {
 
   const handleSuccess = (data) => {
     console.log("🏠 Redirecting after registration, user:", data.user);
-    // store token or session info if needed
+    // e.g. localStorage.setItem("token", data.token);
     navigate("/");
   };
 
@@ -17,11 +17,9 @@ export default function RegisterPage() {
       <h1 className="text-2xl font-bold text-center mb-6">
         Create an Account
       </h1>
-
       {error && (
         <div className="max-w-md mx-auto mb-4 text-red-600">{error}</div>
       )}
-
       <RegisterForm
         onSuccess={handleSuccess}
         onError={(msg) => setError(msg)}
