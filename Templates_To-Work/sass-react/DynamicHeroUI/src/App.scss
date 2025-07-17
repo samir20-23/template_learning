@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// 🎨 Variables
+$s1-color: #00746d; // Teal-green (primary)
+$s2-color: #ffffff; // White (text/light bg)
+$s3-color: #001a1b; // Deep dark (background)
+
+// 🔠 Fonts
+$main-font: 'Poppins',
+sans-serif;
+
+// 📏 Spacing
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+
+// 🧱 Sizes
+$container-max-width: 1200px;
+$border-radius: 1rem;
+
+// ☁️ Shadows
+$box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+// 🔘 Buttons
+$btn-padding: 0.75rem 1.5rem;
+$btn-radius: 0.5rem;
+$btn-font-weight: 600;
+
+// 🧪 Z-index
+$z-header: 1000;
+$z-modal: 2000;
+
+// Define a mixin with optional parameters and defaults
+@mixin flex-container($direction: row,
+    $justify: flex-start,
+    $align: stretch,
+    $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+//  navigation
+
+.navigation_main-left {
+    max-width: 80px;
+    min-width: 50px;
+    background-color: #001a1b;
+    border: none;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 6px 0 6px 0;
+
+}
+
+.navigation_main-left .logo img {
+    border-radius: 100px;
+    width: 45px;
+    height: 45px;
+    background-color: #00746d;
+}
+
+.navigation_main-left nav {
+    padding: 0.5em 1em;
+}
+
+.navigation_main-left nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.navigation_main-left nav ul li {
+    cursor: pointer;
+}
+
+.navigation_main-left nav ul li:hover {
+    color: #00746d;
+    box-shadow: 0 0 44px 5px #00746c;
+    border-radius: 100px;
+}
+
+.navigation_main-left nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.navigation_main-left nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
+
+.navigation_main-left .Profile_img img {
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+}
+ 
