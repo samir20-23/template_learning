@@ -2,6 +2,7 @@ import NavigationLeft from "../components/navigation_left";
 import Footer from "../components/footer";
 import MainContent from "../components/mainContent";
 
+import "../App.scss";
 export default function Header() {
   return (
     <>

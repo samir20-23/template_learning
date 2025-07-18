@@ -4,7 +4,7 @@ import Logo from "../assets/Logo.jpg";
 
 export default function navigationLeft() {
   return (
-    <div className="navigation_main-left">
+    <div className="navigationPart">
       <div className="logo">
         <Link to={"/"}>
           <img src={Logo} alt="" />
