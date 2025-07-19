@@ -1,7 +1,7 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 // 🎨 Variables
@@ -10,8 +10,7 @@ $s2-color: #ffffff; // White (text/light bg)
 $s3-color: #001a1b; // Deep dark (background)
 
 // 🔠 Fonts
-$main-font: 'Poppins',
-sans-serif;
+$main-font: "Poppins", sans-serif;
 
 // 📏 Spacing
 $spacing-sm: 0.5rem;
@@ -35,300 +34,297 @@ $z-header: 1000;
 $z-modal: 2000;
 
 // Define a mixin with optional parameters and defaults
-@mixin flex-container($direction: row,
-    $justify: flex-start,
-    $align: stretch,
-    $wrap: nowrap) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-    flex-wrap: $wrap;
+@mixin flex-container(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
 }
 
 .App {
-    padding: 5px;
-    background-color: rgb(219, 227, 230);
+  width: 100%;
+  padding: 5px;
+  background-color: rgb(219, 227, 230);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header_main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    width: 100%;
-    height: 98vh;
-    padding: 10px;
-    gap: 22px;
-    border-radius: $border-radius - 25;
-    background-color: $s2-color;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100vh;
+  padding: 10px;
+  gap: 22px;
+  border-radius: 30px;
+  background-color: #ffffff;
 }
 
 .nav_main-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 12px;
-    border-radius: $border-radius;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: $border-radius;
 }
 
 //  navigation
 
 .navigationPart {
-    max-width: 70px;
-    min-width: 70px;
-    background-color: $s3-color;
-    border: none;
-    border-radius: $border-radius;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 5px;
-    padding: 12px 0 12px 0;
-
+  max-width: 70px;
+  min-width: 70px;
+  background-color: $s3-color;
+  border: none;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 0 12px 0;
 }
 
 .navigationPart .logo img {
-    border-radius: 100px;
-    width: 45px;
-    height: 45px;
-    background-color: #00746d;
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  background-color: #00746d;
 }
 
 .navigationPart nav {
-    padding: 0.5em 1em;
+  padding: 0.5em 1em;
 }
 
 .navigationPart nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 26px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 26px;
 }
 
 .navigationPart nav ul li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .navigationPart nav ul li:hover {
-    color: #00746d;
-    box-shadow: 0 0 44px 5px #00746c;
-    border-radius: 100px;
+  color: #00746d;
+  box-shadow: 0 0 44px 5px #00746c;
+  border-radius: 100px;
 }
 
 .navigationPart nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .navigationPart nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-
-
 .navigationPart .Profile_img img {
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
 }
 
 // footer part
 .FooterPart {
-    max-width: 70px;
-    min-width: 70px;
-    background: $s1-color;
-    color: $s2-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: $border-radius;
-    max-width: 75px;
-    border: none;
-    padding: 14px 4px 14px 4px;
+  max-width: 70px;
+  min-width: 70px;
+  background: $s1-color;
+  color: $s2-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: $border-radius;
+  max-width: 75px;
+  border: none;
+  padding: 14px 4px 14px 4px;
 }
 
 .FooterPart .title {
-    font-size: 14px;
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
-    margin: 12px 0 0 0;
-    z-index: 2;
-
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  margin: 12px 0 0 0;
+  z-index: 2;
 }
 
 .FooterPart .imgcontent {
-    width: 100%;
-    height: 80px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  width: 100%;
+  height: 80px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .FooterPart .imgcontent img {
-    width: 200%;
-    position: absolute;
-    animation: animationMove_v1 16s infinite alternate;
+  width: 200%;
+  position: absolute;
+  animation: animationMove_v1 16s infinite alternate;
 }
 
 @keyframes animationMove_v1 {
-    0% {
-        transform: rotate(22deg);
+  0% {
+    transform: rotate(22deg);
+  }
 
-    }
+  50% {
+    transform: rotate(-22deg);
+  }
 
-    50% {
-        transform: rotate(-22deg);
-
-    }
-
-    100% {
-        transform: rotate(30deg) translate(22px, 22px);
-
-    }
+  100% {
+    transform: rotate(30deg) translate(22px, 22px);
+  }
 }
 
 .FooterPart .partGetNow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-
 
 .FooterPart .partGetNow .linkGETnow {
-    background-color: $s3-color;
-    color: $s2-color;
-    border-radius: $btn-radius + 10;
-    padding: 8px 4px 8px 4px;
-    font-size: 13px;
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin: 0 0 12px 0;
-    cursor: pointer;
-    z-index: 2;
-
+  background-color: $s3-color;
+  color: $s2-color;
+  border-radius: $btn-radius + 10;
+  padding: 8px 4px 8px 4px;
+  font-size: 13px;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 0 12px 0;
+  cursor: pointer;
+  z-index: 2;
 }
-
-
-
+.nav_main-rigth {
+  width: 70%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: $border-radius; 
+}
 .nav_main-rigth .mainContentPart {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border-radius: $border-radius;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  border-radius: $border-radius;
 }
 
 .section_hero-img-left {
-    width: 100%;
-    height: auto;
-    background-color: $s1-color;
-    border-top-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-    position: relative;
+  width: 100%;
+  height: auto;
+  background-color: $s1-color;
+  border-top-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  position: relative;
+}
+
+.section_hero-img-left img {
+  width: 242px;
 }
 
 .section_hero-img-left .img1 {
-    position: relative;
-    left: -53px;
-    top: 4px;
-    border-bottom-right-radius: 43%;
-    animation: animationboximgdown2 5s infinite alternate;
+  position: relative;
+  left: -53px;
+  top: 4px;
+  border-bottom-right-radius: 43%;
+  animation: animationboximgdown2 5s infinite alternate;
 }
 
 @keyframes animationboximgdown2 {
-    0% {
-        transform: scaleX(-1) rotate(2deg);
-        filter: blur(10px);
-    }
+  0% {
+    transform: scaleX(-1) rotate(2deg);
+    filter: blur(10px);
+  }
 
-    50% {
-        transform: scaleX(-1) rotate(-2deg);
-        filter: blur(22px);
-    }
+  50% {
+    transform: scaleX(-1) rotate(-2deg);
+    filter: blur(22px);
+  }
 
-    100% {
-        transform: scaleX(-1) rotate(3deg) translate(22px, 22px);
-        filter: blur(32px);
-    }
+  100% {
+    transform: scaleX(-1) rotate(3deg) translate(22px, 22px);
+    filter: blur(32px);
+  }
 }
 
-
 .section_hero-img-left .img2 {
-    position: absolute;
-    left: -30px;
-    top: 4px;
-    border-bottom-right-radius: 34%;
-    transform: scaleX(-1);
-    transform: scaleX(-1);
-    z-index: 2;
-
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  border-bottom-right-radius: 34%;
+  transform: scaleX(-1);
+  transform: scaleX(-1);
+  z-index: 2;
 }
 
 .section_hero-content-right {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-top-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
-
-
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  border-top-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
 }
 
 .section_hero-content-right img {
-    width: 400px;
-    height: auto;
-    position: relative;
-    top: -0.5px;
-    left: -2px;
-
+  width: 400px;
+  height: auto;
+  position: relative;
+  top: -0.5px;
+  left: -2px;
 }
 
 @keyframes fadeSlideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(60px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-
 @keyframes pulseIcon {
+  0%,
+  100% {
+    transform: scale(1);
+  }
 
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 // search
@@ -338,247 +334,239 @@ $z-modal: 2000;
 //           <div className="cercle"></div>
 
 .topbox {
-    width: 100%;
-    position: relative;
-    top: 3.3px;
-    left: -2px;
-    background: linear-gradient(to top, $s1-color 52%, transparent 50%);
-    height: auto;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: none;
-    border-top-left-radius: none;
-    border-bottom-left-radius: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  top: 3.3px;
+  left: -2px;
+  background: linear-gradient(to top, $s1-color 52%, transparent 50%);
+  height: auto;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: none;
+  border-top-left-radius: none;
+  border-bottom-left-radius: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .backgIcon {
-    background-color: rgb(255, 255, 255);
-    width: 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .topbox .backgIcon #iconinstagram {
-    width: 100%;
-    padding: 20px;
-    background-color: $s1-color;
-    color: $s2-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: none;
-    border-top-left-radius: none;
-    border-bottom-left-radius: none;
+  width: 100%;
+  padding: 20px;
+  background-color: $s1-color;
+  color: $s2-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: none;
+  border-top-left-radius: none;
+  border-bottom-left-radius: none;
 }
 
 .backgCercle {
-    background-color: rgb(255, 255, 255);
-    width: 100px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+  background-color: rgb(255, 255, 255);
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .topbox .backgCercle .cercle {
-    width: 100%;
-    padding: 20px;
-    background-color: $s1-color;
-    color: $s2-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: $s1-color;
+  color: $s2-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: none;
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: none;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: none;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: none;
 }
 
 .topbox .search_bar {
-
-    // position: absolute;
-    width: 100%;
-    max-width: 200px;
-    border-radius: $border-radius - 10;
-    border-top: 10px solid $s2-color;
-    border-left: 10px solid $s2-color;
-    border-right: 10px solid $s2-color;
-    border-bottom: 10px solid $s2-color;
-    background-color: $s3-color;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    flex-wrap: nowrap;
-    gap: 12px;
-    z-index: 2;
+  // position: absolute;
+  width: 100%;
+  max-width: 200px;
+  border-radius: $border-radius - 10;
+  border-top: 10px solid $s2-color;
+  border-left: 10px solid $s2-color;
+  border-right: 10px solid $s2-color;
+  border-bottom: 10px solid $s2-color;
+  background-color: $s3-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  flex-wrap: nowrap;
+  gap: 12px;
+  z-index: 2;
 }
 
 .topbox .search_bar .searchInput {
-    border-radius: $border-radius;
-    background-color: $s1-color;
-    color: $s2-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 10px 10px 10px;
-    flex-wrap: nowrap;
-    font-size: 9px;
-    border: none;
-    gap: 5px;
-    font-family: Arial, Helvetica, sans-serif;
+  border-radius: $border-radius;
+  background-color: $s1-color;
+  color: $s2-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px 10px 10px;
+  flex-wrap: nowrap;
+  font-size: 9px;
+  border: none;
+  gap: 5px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .topbox .search_bar .searchInput i {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .topbox .search_bar .searchFilter {
-    width: 100%;
-    min-width: 50px;
-    max-width: 60px;
-    border-radius: $border-radius;
-    background-color: $s1-color;
-    color: $s2-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 19px 8px 16px 13px;
-    border: none;
-    gap: 5px;
+  width: 100%;
+  min-width: 50px;
+  max-width: 60px;
+  border-radius: $border-radius;
+  background-color: $s1-color;
+  color: $s2-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 19px 8px 16px 13px;
+  border: none;
+  gap: 5px;
 }
 
 .topbox .search_bar .searchFilter .item1,
 .item2,
 .item3 {
-    position: relative;
-    padding: 4px 9px 1px 9px;
-    border-radius: $border-radius;
-    background-color: $s2-color;
+  position: relative;
+  padding: 4px 9px 1px 9px;
+  border-radius: $border-radius;
+  background-color: $s2-color;
 }
 
 .searchFilter .item1 {
-    left: -6px;
+  left: -6px;
 }
 
 .searchFilter .item2 {
-    left: 6px;
-
+  left: 6px;
 }
 
 .searchFilter .item3 {
-    left: -6px;
+  left: -6px;
 }
-
-
 
 // downbox
 .section_hero-content-right .downbox {
-    width: 98%;
-    border-radius: $border-radius - 8;
-    background-color: #001a1b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 15px 0 15px 0;
-    margin-top: 5px;
-    margin-left: 9px;
-    color: #ffffff;
-    position: relative;
-
+  width: 98%;
+  max-width: 400px;
+  border-radius: $border-radius - 8;
+  background-color: #001a1b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 15px 0 15px 0;
+  margin-top: 5px;
+  margin-left: 9px;
+  color: #ffffff;
+  position: relative;
 }
 
 .downbox .titlepart {
-    min-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 15px;
-    width: 100%;
-    text-align: center;
-
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 15px;
+  width: 100%;
+  text-align: center;
 }
 
 .titlepart p {
-    font-family: cursive;
-    font-size: 30px;
-    display: flex;
-    flex-wrap: nowrap;
-    text-decoration: none;
+  font-family: cursive;
+  font-size: 30px;
+  display: flex;
+  flex-wrap: nowrap;
+  text-decoration: none;
 }
 
 .titlepart span {
-    font-family: cursive;
-    font-size: 19px;
-    display: flex;
-    flex-wrap: nowrap;
-    text-decoration: none;
+  font-family: cursive;
+  font-size: 19px;
+  display: flex;
+  flex-wrap: nowrap;
+  text-decoration: none;
 }
 
 .titlepart button {
-    border-radius: $border-radius;
-    border: none;
-    padding: 10px 35px 10px 35px;
-    background-color: $s1-color;
-    color: $s2-color;
-    margin: 10px 0 0 0;
+  border-radius: $border-radius;
+  border: none;
+  padding: 10px 35px 10px 35px;
+  background-color: $s1-color;
+  color: $s2-color;
+  margin: 10px 0 0 0;
 }
 
 .downbox .boximg {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .boximg .boximg1 {
-    position: absolute;
-    width: 100%;
-    top: -150px;
-    animation: animationboximgdown 16s infinite alternate;
-filter: blur(22px);
+  position: absolute;
+  width: 100%;
+  top: -150px;
+  animation: animationboximgdown 16s infinite alternate;
+  filter: blur(22px);
 }
 
 .boximg .boximg2 {
-    position: absolute;
-    width: 100%;
-    top: -150px;
-    animation: animationboximgdown 16s infinite alternate;
+  position: absolute;
+  width: 100%;
+  top: -150px;
+  animation: animationboximgdown 16s infinite alternate;
 }
 
 @keyframes animationboximgdown {
+  0% {
+    transform: rotate(2deg);
+  }
 
-    0% {
-        transform: rotate(2deg);
+  50% {
+    transform: rotate(-2deg);
+  }
 
-    }
-
-    50% {
-        transform: rotate(-2deg);
-
-    }
-
-    100% {
-        transform: rotate(3deg) translate(22px, 22px);
-
-    }
+  100% {
+    transform: rotate(3deg) translate(22px, 22px);
+  }
 }
 
 // burderraduis
 .borderradius {
-    padding: 30px;
-    border-top-left-radius: 54px;
-    /* border-bottom-left-radius: 200.5rem; */
-    position: absolute;
-    top: 318px;
-    left: -20px;
-    z-index: 0;
-    border-top: 20px solid $s1-color;
-    border-left: 20px solid $s1-color;
+  padding: 30px;
+  border-top-left-radius: 54px;
+  /* border-bottom-left-radius: 200.5rem; */
+  position: absolute;
+  top: 318px;
+  left: -20px;
+  z-index: 0;
+  border-top: 20px solid $s1-color;
+  border-left: 20px solid $s1-color;
 }

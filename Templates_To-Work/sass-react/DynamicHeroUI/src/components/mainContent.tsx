@@ -13,11 +13,8 @@ export default function MainContent() {
         {/* search */}
         <div className="topbox">
           <div className="backgIcon">
-            <i
-              className="fa fa-instagram"
-              id="iconinstagram"
-              aria-hidden="true"
-            ></i>
+           <i className="fab fa-instagram" id="iconinstagram" aria-hidden="true"></i>
+ 
           </div>
 
           <div className="search_bar">
@@ -39,6 +36,7 @@ export default function MainContent() {
 
         {/* down box */}
         <div className="borderradius"></div>
+        <div className="borderAnimation"></div>
         <div className="downbox">
           <div className="titlepart">
             <p>40% OFF</p>
@@ -48,7 +46,7 @@ export default function MainContent() {
           <div className="boximg">
             <img src={RightImg} className="boximg1" alt="" />
             <img src={RightImg} className="boximg2" alt="" />
-
+ 
           </div>
         </div>
       </div>

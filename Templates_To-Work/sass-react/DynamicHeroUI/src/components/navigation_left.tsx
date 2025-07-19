@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import imgProfile from "../assets/imgprofile.jpg";
-import Logo from "../assets/Logo.jpg";
+import Logo from "../assets/logo.jpg";
 
 export default function navigationLeft() {
   return (
