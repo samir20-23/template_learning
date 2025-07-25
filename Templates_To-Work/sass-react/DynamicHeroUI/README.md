@@ -1,5 +1,16 @@
- 
+ ## to start the app  
+```
+git clone 
+cd 
+npm install 
+npm run dev 
+<!-- 
+if you need run create the desctop app just run  -->
+npm run electron-build
+<!-- to show all steps to to desctopSteps.md  -->
 
+
+```
 ## 🎯 1. Project Name Ideas
 
 * **FlexiLanding**

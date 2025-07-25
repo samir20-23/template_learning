@@ -1,22 +1,60 @@
+ 
+### ✅ `electron.js` (place in project root):
+
+```js
+const { app, BrowserWindow } = require("electron");
+const path = require("path");
+
+function createWindow() {
+  const win = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
+
+  if (process.env.NODE_ENV === "development") {
+    win.loadURL("http://localhost:5173");
+  } else {
+    win.loadFile(path.join(__dirname, "dist", "index.html"));
+  }
+}
+
+app.whenReady().then(createWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") app.quit();
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) createWindow();
+});
+```
+
+---
+
+### ✅ `package.json` (replace your existing one):
+
+```json
 {
   "name": "dynamicheroui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "electron.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
     "build": "vite build",
     "desktop": "cross-env NODE_ENV=production npm run build && electron .",
     "electron-build": "electron-builder"
   },
-  "main": "electron/electron.cjs",
   "build": {
     "appId": "com.yourapp.id",
     "productName": "MyDesktopApp",
     "files": [
       "dist/**/*",
-      "electron/electron.cjs",
-      "package.json"
+      "electron.js"
     ],
     "directories": {
       "buildResources": "assets"
@@ -36,7 +74,7 @@
     "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "electron": "^37.2.4",
-    "electron-builder": "^24.6.0",
+    "electron-builder": "^24.14.1",
     "eslint": "^9.30.1",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -48,3 +86,20 @@
     "wait-on": "^7.0.1"
   }
 }
+```
+
+---
+
+### ✅ Terminal Commands (run in order):
+
+```bash
+npm install
+npm run dev
+```
+
+To build desktop app:
+
+```bash
+npm run electron-build
+```
+ 
